@@ -1,0 +1,8 @@
+.page { position: relative; overflow: hidden; min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; padding-block: 60px; background: var(--dark); color: var(--on); }
+.page::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(236,237,234,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(236,237,234,.045) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+.inner { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; width: 100%; }
+.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--on); }
+.logo:hover { color: #FFFFFF; }
+.logo b { font-family: var(--disp); font-weight: 800; font-stretch: 118%; font-size: 21px; letter-spacing: -.02em; }
+.big { font-size: clamp(120px, 26vw, 300px); line-height: .85; letter-spacing: -.045em; color: var(--zest); }
+.note { font-size: 20px; color: var(--on2); }

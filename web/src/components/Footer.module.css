@@ -1,0 +1,47 @@
+.foot { position: relative; background: var(--dark); color: var(--on); padding-block: 72px 0; overflow: hidden; border-top: 1px solid #2A2D31; }
+.fgrid { position: relative; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.1fr) minmax(0, .85fr) minmax(0, 1.5fr); gap: 48px; align-items: start; }
+
+.brand, .raise { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #FFFFFF; }
+.logo:hover { color: #FFFFFF; }
+.wm { font-family: var(--disp); font-weight: 800; font-stretch: 118%; font-size: 22px; letter-spacing: -.02em; line-height: 1; }
+.motto { font-family: var(--disp); font-weight: 800; font-stretch: 112%; font-size: 24px; letter-spacing: -.02em; line-height: 1.1; color: var(--zest); text-wrap: balance; }
+.about { color: var(--on2); font-size: 17px; line-height: 1.5; }
+.info { display: flex; align-items: center; gap: 10px; color: var(--on2); font-size: 16px; text-decoration: none; overflow-wrap: anywhere; }
+.info svg { flex: none; }
+a.info { min-height: 44px; transition: color .2s; }
+a.info:hover { color: #FFFFFF; }
+.links { display: flex; flex-direction: column; }
+
+.head { font-size: 24px; letter-spacing: -.02em; line-height: 34px; color: var(--zest); }
+.list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; }
+.list a { display: inline-block; padding-block: 7px; color: var(--on2); font-size: 17px; line-height: 1.4; text-decoration: none; transition: color .2s, transform .25s var(--ease); }
+.list a:hover { color: #FFFFFF; transform: translateX(4px); }
+
+.pill { display: flex; align-items: center; width: 100%; max-width: 380px; margin-top: 6px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 0 0 1.5px var(--ink); }
+.pill:focus-within { outline: 3px solid var(--zest); outline-offset: 3px; }
+.pill input { flex: 1; min-width: 0; height: 52px; padding: 0 4px 0 22px; border: 0; border-radius: 999px 0 0 999px; background: transparent; color: var(--ink); font: inherit; font-size: 16px; outline: 0; }
+.pill input::placeholder { color: var(--ink3); opacity: 1; }
+.pill button { flex: none; display: grid; place-items: center; width: 56px; height: 52px; padding: 0; border: 0; border-radius: 0 999px 999px 0; background: transparent; color: var(--ink2); cursor: pointer; transition: color .2s, transform .25s var(--ease); }
+.pill button:hover { color: var(--ink); transform: translateX(3px); }
+/* the whole pill shows focus */
+.foot .pill input:focus-visible, .foot .pill button:focus-visible { outline: 0; }
+
+/* one unbroken line */
+.tray { position: relative; margin-top: 64px; height: 30px; background: #1B1D20; }
+.line { position: absolute; left: 0; right: 0; top: 13px; height: 4px; background: var(--zest); transform: scaleX(0); transform-origin: left; transition: transform 1.8s var(--ease); }
+.tray.go .line { transform: scaleX(1); }
+.end { position: absolute; right: calc(max(0px, (100% - 1240px) / 2) + clamp(18px, 4vw, 56px)); top: 6px; width: 18px; height: 18px; border-radius: 50%; background: var(--zest); transform: scale(0); transition: transform .5s var(--ease) 1.6s; }
+.tray.go .end { transform: scale(1); }
+.legal { position: relative; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: #16181B; color: var(--on2); padding: 16px calc(max(0px, (100% - 1240px) / 2) + clamp(18px, 4vw, 56px)) 26px; font-family: var(--mono); font-size: 11.5px; }
+.legal a { display: inline-block; padding-block: 6px; margin-block: -6px; color: var(--on2); text-decoration: none; }
+.legal a:hover { color: #FFFFFF; }
+
+@media (max-width: 1000px) {
+  .fgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 32px; }
+  .brand, .raise { grid-column: 1 / -1; }
+}
+@media (max-width: 420px) {
+  .fgrid { column-gap: 20px; }
+  .list a { font-size: 16px; }
+}

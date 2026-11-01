@@ -1,0 +1,52 @@
+.hero { background: var(--dark); color: var(--on); padding-block: 84px 72px; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(236,237,234,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(236,237,234,.045) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+.hin { position: relative; display: flex; flex-direction: column; gap: 30px; }
+.h1 { font-size: clamp(46px, 7.4vw, 116px); line-height: .92; max-width: 15ch; color: #FFFFFF; }
+.h1 .z { color: var(--zest); }
+.hlede { font-size: 20px; color: var(--on2); max-width: 58ch; }
+.hlede b { color: var(--on); font-weight: 500; }
+.hcta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.flow { margin-top: 26px; border-top: 1px solid #2A2D31; padding-top: 26px; display: flex; flex-direction: column; gap: 20px; }
+.flowtop { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+.toggle { display: flex; padding: 4px; border-radius: 6px; background: #1B1D20; box-shadow: inset 0 0 0 1px #2C2F33; }
+.toggle button { min-height: 40px; padding: 0 16px; border: 0; border-radius: 4px; background: transparent; color: var(--on2); font: 600 14px var(--sans); cursor: pointer; transition: background .3s, color .3s; }
+.toggle button.on { background: var(--on); color: var(--ink); }
+.toggle button.on.z { background: var(--zest); }
+.track { position: relative; display: flex; align-items: flex-start; padding-top: 8px; }
+.node { flex: none; width: 118px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; position: relative; z-index: 2; }
+.dot { width: 22px; height: 22px; border-radius: 50%; background: var(--dark); box-shadow: inset 0 0 0 3px var(--zest); transition: box-shadow .5s; }
+.track.broken .dot { box-shadow: inset 0 0 0 3px var(--on2); }
+.node b { font-family: var(--disp); font-weight: 700; font-stretch: 100%; font-size: 15px; letter-spacing: -.01em; color: var(--on); }
+.node span { font-family: var(--mono); font-size: 10.5px; color: var(--on2); }
+.conn { flex: 1; position: relative; height: 22px; display: flex; align-items: center; min-width: 30px; }
+.conn .a, .conn .b { position: absolute; top: 10px; height: 3px; width: 50%; background: var(--zest); transition: transform .7s var(--ease), background .5s; }
+.conn .a { left: 0; transform-origin: left; }
+.conn .b { right: 0; transform-origin: right; }
+.track.broken .conn .a, .track.broken .conn .b { background: var(--on2); transform: scaleX(.62); }
+.chip { position: absolute; left: 50%; top: -30px; transform: translate(-50%, 8px); opacity: 0; white-space: nowrap; font-family: var(--mono); font-size: 10.5px; padding: 4px 8px; border-radius: 4px; background: var(--brk); color: #1A0A05; transition: opacity .4s var(--ease), transform .5s var(--ease); }
+.track.broken .chip { opacity: 1; transform: translate(-50%, 0); }
+.gapx { position: absolute; left: 50%; top: 5px; transform: translateX(-50%) scale(0); width: 13px; height: 13px; transition: transform .4s var(--ease); }
+.track.broken .gapx { transform: translateX(-50%) scale(1); }
+.pulse { position: absolute; top: 13px; left: 59px; right: 59px; height: 0; pointer-events: none; z-index: 3; }
+.pulse i { position: absolute; top: -6px; width: 12px; height: 12px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 6px rgba(200,240,49,.35), 0 0 24px 6px rgba(200,240,49,.6); animation: run 4.2s linear infinite; }
+.track.broken .pulse { display: none; }
+.flowcap { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; font-size: 15.5px; color: var(--on2); }
+.flowcap b { color: var(--on); font-weight: 500; }
+
+@keyframes run { 0% { left: 0; opacity: 0; } 6% { opacity: 1; } 94% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
+
+@media (max-width: 1000px) {
+  .track { flex-direction: column; align-items: stretch; gap: 0; }
+  .node { width: auto; flex-direction: row; text-align: left; gap: 14px; }
+  .conn { height: 42px; min-width: 0; margin-left: 10px; width: 3px; flex: none; }
+  .conn .a, .conn .b { top: auto; left: 0; width: 3px; height: 50%; }
+  .conn .a { top: 0; transform-origin: top; }
+  .conn .b { bottom: 0; transform-origin: bottom; }
+  .track.broken .conn .a, .track.broken .conn .b { transform: scaleY(.55); }
+  .chip { left: 22px; top: 50%; transform: translate(0, -50%); }
+  .track.broken .chip { transform: translate(0, -50%); }
+  .gapx { left: -5px; top: 50%; transform: translateY(-50%) scale(0); }
+  .track.broken .gapx { transform: translateY(-50%) scale(1); }
+  .pulse { display: none; }
+}

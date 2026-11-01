@@ -1,0 +1,36 @@
+/* command bar + continuity rail */
+.nav { position: sticky; top: 0; z-index: 70; background: rgba(14,15,17,.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: var(--on); }
+.navin { display: flex; align-items: center; gap: 18px; min-height: 64px; flex-wrap: wrap; padding-block: 8px; }
+.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--on); }
+.logo:hover { color: #FFFFFF; }
+.logo b { font-family: var(--disp); font-weight: 800; font-stretch: 118%; font-size: 21px; letter-spacing: -.02em; }
+.cmd { position: relative; flex: 1; display: flex; justify-content: center; }
+.cmdbtn { display: flex; align-items: center; gap: 12px; min-height: 44px; min-width: min(380px, 100%); padding: 0 14px; border-radius: 6px; border: 0; background: #1B1D20; box-shadow: inset 0 0 0 1px #2C2F33; color: var(--on2); font: 500 14.5px var(--sans); cursor: pointer; text-align: left; transition: box-shadow .2s; }
+.cmdbtn:hover { box-shadow: inset 0 0 0 1px #4A4E54; color: var(--on); }
+.cmdbtn .k { margin-left: auto; font-family: var(--mono); font-size: 11px; padding: 3px 7px; border-radius: 4px; background: #2A2D31; color: var(--on2); }
+.cmdbtn .cur { color: var(--on); }
+.menu { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); width: min(440px, 92vw); background: #16181B; border-radius: 10px; box-shadow: 0 0 0 1px #2C2F33, 0 30px 60px -20px rgba(0,0,0,.7); padding: 8px; display: flex; flex-direction: column; animation: drop .3s var(--ease) both; }
+.menu a { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; align-items: center; gap: 10px; min-height: 48px; padding: 0 10px; border-radius: 6px; text-decoration: none; color: var(--on); font-size: 15px; }
+.menu a:hover { background: #22252A; color: #FFFFFF; }
+.menu a .n { font-family: var(--mono); font-size: 11.5px; color: var(--on2); }
+.menu a .s { font-family: var(--mono); font-size: 11px; color: var(--on2); }
+.menu .mh { padding: 8px 10px 6px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--on2); }
+.navr { display: flex; align-items: center; gap: 14px; }
+.nlink { color: var(--on2); text-decoration: none; font-size: 14.5px; min-height: 44px; display: inline-flex; align-items: center; }
+.nlink:hover { color: #FFFFFF; }
+.rail { position: relative; height: 3px; background: #24272B; overflow: visible; }
+.rail .fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--zest); }
+.rail .tick { position: absolute; top: -3px; width: 2px; height: 9px; background: #3A3E43; }
+.rail .tick.p { background: var(--zest); }
+
+@keyframes drop { from { opacity: 0; transform: translate(-50%, -6px); } }
+
+@media (max-width: 1000px) {
+  .nlink.hide { display: none; }
+}
+@media (max-width: 600px) {
+  .cmd { order: 3; flex-basis: 100%; }
+  .cmd:empty { display: none; }
+  .cmd:empty + .navr { margin-left: auto; }
+  .cmdbtn { min-width: 0; width: 100%; }
+}

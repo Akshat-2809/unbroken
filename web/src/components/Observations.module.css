@@ -1,0 +1,11 @@
+.obs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; margin-top: 56px; background: var(--rule); border-radius: 10px; overflow: hidden; }
+.ob { background: var(--bg); padding: 30px; display: flex; flex-direction: column; gap: 16px; min-height: 340px; transition: background .3s; }
+.ob:hover { background: #FFFFFF; }
+.big { font-family: var(--disp); font-weight: 900; font-stretch: 125%; font-size: 74px; line-height: .8; color: var(--ink); -webkit-text-stroke: 0; }
+.ob h3 { font-size: clamp(24px, 2.2vw, 30px); font-stretch: 105%; }
+.ob p { color: var(--ink2); }
+
+@media (max-width: 1000px) {
+  .obs { grid-template-columns: minmax(0, 1fr); }
+  .ob { min-height: 0; }
+}

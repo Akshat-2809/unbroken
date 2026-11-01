@@ -1,0 +1,21 @@
+.ri { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 56px; align-items: center; margin-top: 56px; }
+.panel { border-radius: 10px; background: #FFFFFF; box-shadow: inset 0 0 0 1px var(--rule); padding: 28px; display: flex; flex-direction: column; gap: 22px; }
+.tl { position: relative; height: 74px; }
+.tl .base { position: absolute; left: 0; right: 0; top: 36px; height: 3px; background: #DADAD4; border-radius: 3px; }
+.tl .lag { position: absolute; left: 0; top: 36px; height: 3px; border-radius: 3px; transition: width .2s, background .3s; }
+.tl .mk { position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; transform: translateX(-50%); transition: left .2s; }
+.tl .mk i { width: 16px; height: 16px; border-radius: 50%; display: block; margin-top: 29px; }
+.tl .mk span { position: absolute; top: 0; white-space: nowrap; font-family: var(--mono); font-size: 11px; color: var(--ink2); }
+.range { width: 100%; accent-color: var(--ink); min-height: 44px; }
+.verdict { display: flex; flex-direction: column; gap: 8px; padding: 22px; border-radius: 8px; transition: background .4s; }
+.verdict b { font-family: var(--disp); font-weight: 800; font-stretch: 118%; font-size: clamp(30px, 3vw, 44px); letter-spacing: -.02em; line-height: 1; }
+.scale { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; color: var(--ink3); }
+
+/* the labels hang past the panel as designed, which runs them off the screen below this width */
+@media (max-width: 1320px) {
+  .tl .mk .first { left: 0; }
+  .tl .mk .seen > span { transform: translateX(calc(var(--t) * -100%)); }
+}
+@media (max-width: 1000px) {
+  .ri { grid-template-columns: minmax(0, 1fr); }
+}
