@@ -16,16 +16,4 @@ export const talkSchema = z.object({
     .max(254, "That email is too long.")
     .pipe(z.email("Please enter a valid email address.")),
   area: z.enum(AREAS, "Please choose where you work."),
-  // Honeypot: real visitors never see or fill this.
-  website: z.string().optional().default(""),
 });
-
-export type TalkState =
-  | { status: "idle" }
-  | { status: "success" }
-  | {
-      status: "error";
-      message: string;
-      fieldErrors?: Partial<Record<TalkField, string>>;
-      values?: Partial<Record<TalkField, string>>;
-    };

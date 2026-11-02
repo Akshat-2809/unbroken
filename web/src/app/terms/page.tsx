@@ -6,7 +6,7 @@ import { CONTACT_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of use — Unbroken",
-  description: "The rules for using the Unbroken website and getting in touch through it.",
+  description: "The rules for using the Unbroken website and getting in touch with us.",
   alternates: { canonical: "/terms" },
 };
 
@@ -14,7 +14,7 @@ const mail = <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>;
 
 const SUMMARY: LegalSummaryRow[] = [
   { subject: "This website", answer: "It shares how we see the problem. The product isn’t on sale here, and plans may change." },
-  { subject: "Getting in touch", answer: "It starts a conversation. It isn’t a contract, a pilot or a promise of a reply by any date." },
+  { subject: "Getting in touch", answer: <>The form doesn’t send or store what you type. To reach us, email {mail}. That isn’t a contract, a pilot or a promise of a reply by any date.</> },
   { subject: "The illustrations", answer: "The shipment journey and the timing slider illustrate the problem. They don’t show the product." },
   { subject: "If we disagree", answer: "Indian law applies, and the courts at Gurugram decide." },
 ];
@@ -57,11 +57,15 @@ const SECTIONS: LegalSection[] = [
     title: "Getting in touch",
     body: (
       <>
-        <p>When you use our form:</p>
+        <p>
+          The form and the footer email box on this Website don&apos;t send or store what you type. The confirmation they show
+          doesn&apos;t mean we received anything. To reach us, write to {mail}.
+        </p>
+        <p>When you email us:</p>
         <ul>
           <li>what you tell us must be true, and the email address must be your own;</li>
           <li>it doesn&apos;t create a contract or guarantee a reply, a demo or access to anything; and</li>
-          <li>you can ask us to delete your details at any time by writing to {mail}.</li>
+          <li>you can ask us to delete your emails at any time.</li>
         </ul>
       </>
     ),
@@ -74,8 +78,8 @@ const SECTIONS: LegalSection[] = [
         <p>Please don&apos;t:</p>
         <ul>
           <li>use the Website for anything unlawful, fraudulent or harmful;</li>
-          <li>pretend to be someone else, or submit anyone&apos;s details without their permission;</li>
-          <li>send spam, or false, automated or bulk entries through our form;</li>
+          <li>pretend to be someone else, or send us anyone&apos;s details without their permission;</li>
+          <li>send us spam, or false, automated or bulk messages;</li>
           <li>scrape or copy the Website by automated means, except search engines that follow our robots.txt;</li>
           <li>probe it for weaknesses, break its security, or introduce harmful code; or</li>
           <li>copy, modify or reverse engineer it, except as the law allows.</li>
@@ -101,7 +105,7 @@ const SECTIONS: LegalSection[] = [
   {
     id: "other-sites",
     title: "Other websites",
-    body: <p>Some links lead to sites we don&apos;t run, including LinkedIn and the founder&apos;s own site. We aren&apos;t responsible for their content, terms or privacy practices.</p>,
+    body: <p>Some links lead to sites we don&apos;t run, including LinkedIn. We aren&apos;t responsible for their content, terms or privacy practices.</p>,
   },
   {
     id: "no-promises",
@@ -167,7 +171,7 @@ export default function TermsPage() {
   return (
     <LegalDoc
       title="Terms of use"
-      intro="We're in stealth, so these rules are short. They cover this website and getting in touch through it."
+      intro="We're in stealth, so these rules are short. They cover this website and getting in touch with us."
       summary={SUMMARY}
       sections={SECTIONS}
     />

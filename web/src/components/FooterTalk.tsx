@@ -7,7 +7,7 @@ import styles from "./Footer.module.css";
 
 /**
  * Starts the request: the email is carried over to the "Talk to Rajat" form, which
- * still needs a name and an area. Nothing is sent or stored from here.
+ * still needs a name and an area. Nothing is sent or stored, here or there.
  * The input has no name, so without JavaScript the form just opens the real one.
  */
 export function FooterTalk() {
