@@ -81,14 +81,14 @@ const SECTIONS: LegalSection[] = [
       <>
         <p>Our team, and only where needed:</p>
         <ul>
-          <li><b>Vercel Inc.,</b> which hosts the website and keeps its request logs.</li>
+          <li><b>Our hosting provider,</b> which hosts the website and keeps its request logs.</li>
           <li><b>Our email provider,</b> which holds the emails you send us.</li>
           <li><b>Professional advisers,</b> such as lawyers and auditors, under a duty of confidentiality.</li>
           <li><b>Authorities and courts,</b> where the law requires it or to protect our legal rights.</li>
           <li><b>A buyer or successor,</b> if we are part of a merger or sale, with this policy still protecting your data.</li>
         </ul>
         <p>
-          Vercel and our email provider may store or process data outside India. The DPDP law allows that except to countries the Central
+          Our hosting and email providers may store or process data outside India. The DPDP law allows that except to countries the Central
           Government restricts, and we won&apos;t transfer data to a restricted country.
         </p>
       </>
@@ -172,7 +172,7 @@ const SECTIONS: LegalSection[] = [
   {
     id: "other-sites",
     title: "Other websites",
-    body: <p>Some links lead elsewhere, including LinkedIn. Their own privacy policies apply there, not this one.</p>,
+    body: <p>Some links lead to other websites. Their own privacy policies apply there, not this one.</p>,
   },
   {
     id: "changes",
