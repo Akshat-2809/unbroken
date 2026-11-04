@@ -73,7 +73,7 @@ export function Footer() {
         <span className={styles.end} />
       </ScrollTrigger>
       <div className={styles.legal}>
-        <span>© 2026 Unbroken</span>
+        <span>© 2026 Unbroken. All rights reserved.</span>
         <Link href="/#top">Back to the top ↑</Link>
       </div>
     </footer>

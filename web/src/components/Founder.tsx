@@ -10,7 +10,7 @@ const CAREER: [string, string, string, number, number][] = [
   ["Product & strategic consulting · Logistics", "2013 – 2021", "B2B, B2C, warehousing, FTL, PTL, reverse logistics, ERP.", 2013.9, 2021.6],
   ["Swym", "2021 – 2022", "Lead, Product Implementation. SaaS for eCommerce.", 2021.7, 2022.4],
   ["IBS Software", "2022 – 2026", "Product Manager, then Lead Product Manager. Airline staff travel product.", 2022.4, 2026.2],
-  ["Unbroken · Founder", "Apr 2026 –", "AI-native enterprise platform for logistics and supply chain.", 2026.25, 2026.9],
+  ["Founder", "Apr 2026 –", "AI-native enterprise platform for logistics and supply chain.", 2026.25, 2026.9],
 ];
 const FIRST_YEAR = 2007;
 const SPAN = 2026.9 - FIRST_YEAR;
@@ -46,7 +46,7 @@ export function Founder() {
                 <div className={styles.meta}><b><span>{where}</span></b><span>{when}</span></div>
                 <div className={styles.gtrack}>
                   <span
-                    className={`${styles.gbar} ${where.startsWith("Unbroken") ? styles.now : ""}`}
+                    className={`${styles.gbar} ${where === "Founder" ? styles.now : ""}`}
                     style={{ left: `${(((from - FIRST_YEAR) / SPAN) * 100).toFixed(2)}%`, width: `${Math.max(1.2, ((to - from) / SPAN) * 100).toFixed(2)}%` }}
                   />
                 </div>
